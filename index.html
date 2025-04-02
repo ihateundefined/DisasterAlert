@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>재난문자 알림 및 대처법</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- Pretendard 폰트 적용 -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <!-- Google Font 적용 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Billabong&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS 파일 적용 -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <header class="bg-red-600 text-white shadow-md">
+      <div class="container mx-auto py-4 px-4">
+        <h1 class="text-2xl md:text-3xl font-bold">재난문자 알림센터</h1>
+        <p class="text-sm md:text-base">실시간 재난문자 확인 및 대처요령</p>
+      </div>
+    </header>
+
+    <main class="container mx-auto py-8 px-4">
+      <div class="flex flex-col items-center mb-8">
+        <h2 class="text-xl md:text-2xl font-semibold mb-2">최근 재난문자</h2>
+        <p class="text-gray-600 text-sm md:text-base text-center mb-4">
+          카드를 클릭하면 해당 재난에 대한 대처법을 확인할 수 있습니다
+        </p>
+
+        <div class="relative w-full md:w-4/5 overflow-hidden">
+          <div
+            id="disaster-alerts"
+            class="disaster-slider flex items-center gap-4 overflow-x-auto py-4 px-2"
+          >
+            <div class="text-center text-gray-500 flex-shrink-0 w-full">
+              데이터를 불러오는 중...
+            </div>
+          </div>
+
+          <button
+            id="scroll-left"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 hidden md:block"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            id="scroll-right"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 hidden md:block"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
+        <h3 class="text-lg md:text-xl font-semibold mb-4">
+          재난문자 서비스 안내
+        </h3>
+        <p class="text-gray-700 mb-4">
+          이 웹사이트는 재난안전데이터공유플랫폼의 OpenAPI를 통해 제공되는
+          실시간 재난문자를 보여주며, 각 재난 상황에 맞는 대처법을 함께
+          제공합니다.
+        </p>
+        <div class="bg-gray-100 p-4 rounded-md">
+          <h4 class="font-medium mb-2">제공되는 재난 유형</h4>
+          <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+            <li class="bg-red-100 text-red-800 px-2 py-1 rounded">산사태</li>
+            <li class="bg-blue-100 text-blue-800 px-2 py-1 rounded">조수</li>
+            <li class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded">
+              지진
+            </li>
+            <li class="bg-orange-100 text-orange-800 px-2 py-1 rounded">
+              폭염
+            </li>
+            <li class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded">
+              풍수해(태풍,호우,대설)
+            </li>
+            <li class="bg-green-100 text-green-800 px-2 py-1 rounded">
+              감염병
+            </li>
+            <li class="bg-purple-100 text-purple-800 px-2 py-1 rounded">
+              다중밀집건축물붕괴대형사고
+            </li>
+            <li class="bg-red-100 text-red-800 px-2 py-1 rounded">산불</li>
+            <li class="bg-gray-300 text-gray-800 px-2 py-1 rounded">
+              초미세먼지 재난
+            </li>
+            <li class="bg-blue-100 text-blue-800 px-2 py-1 rounded">
+              해양선박사고
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+      <div class="container mx-auto px-4 text-center text-sm">
+        <p>본 서비스는 재난안전데이터공유플랫폼의 OpenAPI를 활용합니다</p>
+        <p class="mt-2">&copy; 2025 재난문자 알림센터</p>
+      </div>
+    </footer>
+    <!-- JavaScript 파일 적용 -->
+    <script src="./scripts.js"></script>
+  </body>
+</html>

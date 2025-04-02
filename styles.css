@@ -1,0 +1,34 @@
+.card-container {
+    perspective: 1000px;
+}
+
+.card {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.disaster-slider {
+    scroll-behavior: smooth;
+}
+
+.disaster-slider::-webkit-scrollbar {
+    display: none;
+}
