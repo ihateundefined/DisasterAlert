@@ -113,7 +113,7 @@ $(document).ready(function () {
     },
   };
 
-  // 재난 타입 매핑 함수
+  // 재난 타입 매핑
   function getDisasterType(message) {
     const types = {
       산사태: ["산사태", "토석류", "사면붕괴"],
