@@ -1,0 +1,18 @@
+재난문자(속보)
+/V2/api/DSSP-IF-10748?serviceKey=xxxx
+92Q04O7X8E8A92Q6
+
+행정안전부_긴급재난문자
+/V2/api/DSSP-IF-00247?serviceKey=xxxx
+R9VXP72Z0Y6YV23M
+
+
+https://www.safetydata.go.kr/myPage_7/detail?apiPrusAplySn=2614
+
+
+
+
+할일
+1. 탭하여 재난문자 보기 위치 고정
+2. 대처법 너무 긴 것은 줄이기
+3. 색 바꾸기

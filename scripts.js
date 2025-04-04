@@ -319,9 +319,9 @@ $(document).ready(function () {
 
   // API 호출 함수 (실제 환경에서 사용)
   function fetchDisasterAlerts() {
-    const apiUrl = "API_ENDPOINT_HERE"; // 실제 API 엔드포인트로 대체
+    const apiUrl = "API_ENDPOINT_HERE";
     const params = {
-      serviceKey: "YOUR_SERVICE_KEY_HERE", // 실제 서비스 키로 대체
+      serviceKey: "YOUR_SERVICE_KEY_HERE",
       numOfRows: 30,
       pageNo: 1,
       returnType: "json",
