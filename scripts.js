@@ -317,39 +317,39 @@ $(document).ready(function () {
     return cardContainer;
   }
 
-  // API 호출 함수 (실제 환경에서 사용)
+  // API 호출 함수
   function fetchDisasterAlerts() {
-    const apiUrl = "API_ENDPOINT_HERE";
-    const params = {
-      serviceKey: "YOUR_SERVICE_KEY_HERE",
-      numOfRows: 30,
-      pageNo: 1,
-      returnType: "json",
-    };
+    const apiUrl =
+      "https://api.allorigins.win/get?url=" +
+      encodeURIComponent(
+        "https://www.safetydata.go.kr/V2/api/DSSP-IF-00247?&serviceKey=R9VXP72Z0Y6YV23M&numOfRows=10&pageNo=1&returnType=json&crtDt=20250408"
+      );
 
-    // 실제 API 호출 대신 샘플 데이터 사용
-    displayDisasterAlerts(sampleData);
+    $.ajax({
+      url: apiUrl,
+      type: "GET",
+      dataType: "json",
+      success: function (response) {
+        console.log(response);
+        const data = JSON.parse(response.contents); // JSON 변환
+        console.log(data); // 전체 데이터 출력
+        console.log(data.body); // body 출력
 
-    // API 호출 코드 (실제 환경에서 사용)
-    /*
-        $.ajax({
-            url: apiUrl,
-            type: 'GET',
-            data: params,
-            dataType: 'json',
-            success: function(response) {
-                if (response && response.response && response.response.body && response.response.body.items) {
-                    displayDisasterAlerts(response.response.body.items);
-                } else {
-                    $('#disaster-alerts').html('<div class="text-center text-red-500">데이터를 불러오는데 실패했습니다.</div>');
-                }
-            },
-            error: function(xhr, status, error) {
-                $('#disaster-alerts').html('<div class="text-center text-red-500">데이터를 불러오는데 실패했습니다.</div>');
-                console.error('API 호출 오류:', error);
-            }
-        });
-        */
+        if (data && data.body && data.body) {
+          displayDisasterAlerts(data.body);
+        } else {
+          $("#disaster-alerts").html(
+            '<div class="text-center text-red-500">데이터를 불러오는데 실패했습니다.</div>'
+          );
+        }
+      },
+      error: function (xhr, status, error) {
+        $("#disaster-alerts").html(
+          '<div class="text-center text-red-500">데이터를 불러오는데 실패했습니다.</div>'
+        );
+        console.error("API 호출 오류:", error);
+      },
+    });
   }
 
   // 재난문자 표시 함수
@@ -360,8 +360,8 @@ $(document).ready(function () {
     // 날짜 기준으로 정렬 (최신순)
     alerts.sort((a, b) => new Date(b.CRT_DT) - new Date(a.CRT_DT));
 
-    // 최대 5개만 표시
-    const displayAlerts = alerts.slice(0, 6);
+    // 최대 10개만 표시
+    const displayAlerts = alerts.slice(0, 10);
 
     // 카드 생성 및 추가
     displayAlerts.forEach((alert) => {
