@@ -56,7 +56,7 @@ disaster-alert-center/
 ├── index.html        # 메인 HTML 파일
 ├── styles.css        # 스타일시트
 ├── scripts.js        # 자바스크립트 로직
-├── screen.png      # 스크린샷 이미지
+├── screen.png        # 스크린샷 이미지
 └── README.md         # 프로젝트 설명
 ```
 
