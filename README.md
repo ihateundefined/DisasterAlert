@@ -83,4 +83,5 @@ const apiUrl = "https://api.allorigins.win/get?url=" +
 
 ## 📞 연락처
 
-프로젝트 링크: [https://github.com/yourusername/disaster-alert-center](https://github.com/yourusername/disaster-alert-center)
+프로젝트 링크: [[https://github.com/ihateundefined/disaster-alert-center](https://github.com/ihateundefined/DisasterAlert)
+]
