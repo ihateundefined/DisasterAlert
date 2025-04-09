@@ -64,7 +64,7 @@ disaster-alert-center/
 
 ## 🔄 API 활용 방법
 
-이 프로젝트는 재난안전데이터공유플랫폼의 OpenAPI를 사용합니다:
+이 프로젝트는 재난안전데이터공유플랫폼의 OpenAPI를 사용합니다: https://www.safetydata.go.kr/disaster-data/view?dataSn=228#none
 
 ```javascript
 const apiUrl = "https://api.allorigins.win/get?url=" + 
