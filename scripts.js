@@ -255,8 +255,8 @@ $(document).ready(function () {
     const apiUrl =
       // "https://api.allorigins.win/get?url=" +
       // encodeURIComponent(
-        `https://www.safetydata.go.kr/V2/api/DSSP-IF-00247?&serviceKey=R9VXP72Z0Y6YV23M&numOfRows=10&pageNo=1&returnType=json&crtDt=${today}`
-      );
+      `https://www.safetydata.go.kr/V2/api/DSSP-IF-00247?&serviceKey=R9VXP72Z0Y6YV23M&numOfRows=10&pageNo=1&returnType=json&crtDt=${today}`;
+    // );
 
     $.ajax({
       url: apiUrl,
