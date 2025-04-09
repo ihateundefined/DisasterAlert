@@ -9,7 +9,7 @@ $(document).ready(function () {
         "산사태 소리나 땅의 움직임을 느끼면 즉시 높은 곳으로 대피하세요.",
         "대피 시 개인 소지품보다 생명의 안전을 우선하세요.",
       ],
-      color: "bg-red-100 border-red-500 text-red-800",
+      color: "bg-red-800 border-red-800 text-white",
     },
     조수: {
       title: "조수 대처법",
@@ -19,7 +19,7 @@ $(document).ready(function () {
         "선박은 단단히 묶어두고, 해안가 근처에 주차하지 마세요.",
         "대피 시 개인 소지품보다 생명의 안전을 우선하세요.",
       ],
-      color: "bg-blue-100 border-blue-500 text-blue-800",
+      color: "bg-blue-500 border-blue-500 text-white",
     },
     지진: {
       title: "지진 대처법",
@@ -39,7 +39,7 @@ $(document).ready(function () {
         "냉방이 되지 않는 경우 물에 적신 수건이나 선풍기를 활용하세요.",
         "어린이나 노약자는 특히 주의깊게 보살펴야 합니다.",
       ],
-      color: "bg-orange-100 border-orange-500 text-orange-800",
+      color: "bg-pink-500 border-pink-500 text-white",
     },
     풍수해: {
       title: "풍수해(태풍/호우/대설) 대처법",
@@ -49,7 +49,7 @@ $(document).ready(function () {
         "강풍 시에는 창문을 닫고 외부 활동을 자제하세요.",
         "대설 시에는 미끄러지지 않도록 조심하고 보온에 신경쓰세요.",
       ],
-      color: "bg-indigo-100 border-indigo-500 text-indigo-800",
+      color: "bg-teal-500 border-teal-500 text-white",
     },
     감염병: {
       title: "감염병 대처법",
@@ -79,7 +79,7 @@ $(document).ready(function () {
         "연기가 많은 지역은 젖은 수건으로 코와 입을 가리세요.",
         "산불 진행 방향의 반대쪽으로 대피하세요.",
       ],
-      color: "bg-red-100 border-red-500 text-red-800",
+      color: "bg-red-600 border-red-600 text-white",
     },
     초미세먼지: {
       title: "초미세먼지 대처법",
@@ -99,7 +99,7 @@ $(document).ready(function () {
         "바다에 뛰어들기 전에 구명장비를 확보하세요.",
         "물에 뛰어든 후에는 체온 유지를 위해 최대한 움직임을 줄이세요.",
       ],
-      color: "bg-blue-100 border-blue-500 text-blue-800",
+      color: "bg-blue-900 border-blue-900 text-white",
     },
     기본: {
       title: "재난 대처 기본 수칙",
@@ -109,7 +109,7 @@ $(document).ready(function () {
         "비상용품(물, 식량, 약품, 라디오)을 준비해두세요.",
         "가족과 만날 장소와 연락 방법을 미리 정해두세요.",
       ],
-      color: "bg-blue-100 border-blue-500 text-blue-800",
+      color: "bg-blue-600 border-blue-500 text-blue-800",
     },
   };
 
@@ -136,75 +136,6 @@ $(document).ready(function () {
 
     return "기본";
   }
-
-  // 샘플 데이터
-  const sampleData = [
-    {
-      SN: "1",
-      CRT_DT: "2025-04-01 14:30:00",
-      MSG_CN:
-        "[행정안전부] 서울 강남구 일대 지진 발생(규모 3.5). 낙하물에 주의하시고 건물 밖으로 대피하세요.",
-      RCPTN_RGN_NM: "서울특별시 강남구",
-      EMRG_STEP_NM: "위급",
-      DST_SE_NM: "지진",
-      REG_YMD: "20250401",
-      MDFCN_YMD: "20250401",
-    },
-    {
-      SN: "2",
-      CRT_DT: "2025-03-30 09:15:00",
-      MSG_CN:
-        "[기상청] 경상남도 일대 폭염 특보. 야외활동을 자제하시고 충분한 물을 섭취하세요. 노약자 건강에 유의하세요.",
-      RCPTN_RGN_NM: "경상남도 전역",
-      EMRG_STEP_NM: "주의",
-      DST_SE_NM: "폭염",
-      REG_YMD: "20250330",
-      MDFCN_YMD: "20250330",
-    },
-    {
-      SN: "3",
-      CRT_DT: "2025-03-29 18:45:00",
-      MSG_CN:
-        "[산림청] 강원도 홍천군 일대 산불 발생. 인근 주민은 안전한 곳으로 대피하시고 산림 출입을 금지합니다.",
-      RCPTN_RGN_NM: "강원도 홍천군",
-      EMRG_STEP_NM: "경계",
-      DST_SE_NM: "산불",
-      REG_YMD: "20250329",
-      MDFCN_YMD: "20250329",
-    },
-    {
-      SN: "4",
-      CRT_DT: "2025-03-27 21:10:00",
-      MSG_CN:
-        "[기상청] 제주도 남부 해안 태풍 경보. 강한 바람과 폭우가 예상됩니다. 해안가 접근을 자제하고 안전한 곳으로 대피하세요.",
-      RCPTN_RGN_NM: "제주특별자치도 남부",
-      EMRG_STEP_NM: "경계",
-      DST_SE_NM: "풍수해",
-      REG_YMD: "20250327",
-      MDFCN_YMD: "20250327",
-    },
-    {
-      SN: "5",
-      CRT_DT: "2025-03-25 11:20:00",
-      MSG_CN:
-        "[질병관리청] 수도권 지역 호흡기 감염병 확산. 사람이 많은 장소 방문 자제, 마스크 착용, 손 씻기 등 개인위생 수칙을 준수하세요.",
-      RCPTN_RGN_NM: "서울, 경기, 인천",
-      EMRG_STEP_NM: "주의",
-      DST_SE_NM: "감염병",
-      REG_YMD: "20250325",
-      MDFCN_YMD: "20250325",
-    },
-    {
-      SN: "6",
-      CRT_DT: "2025-03-24 11:20:00",
-      MSG_CN: "[종로구] 산사태 발생. 모두 대피하세요",
-      RCPTN_RGN_NM: "서울",
-      EMRG_STEP_NM: "주의",
-      DST_SE_NM: "산사태",
-      REG_YMD: "20250324",
-      MDFCN_YMD: "20250324",
-    },
-  ];
 
   // 카드 생성 함수
   function createDisasterCard(data) {
@@ -272,7 +203,7 @@ $(document).ready(function () {
 
     // 카드 뒷면 (대처법)
     const cardBack = $("<div>").addClass(
-      `card-back rounded-lg shadow-lg overflow-hidden border-2 ${responseData.color}`
+      `card-back rounded-lg shadow-lg overflow-hidden border-2 ${responseData.color} flex flex-col`
     );
 
     // 뒷면 헤더
@@ -288,7 +219,7 @@ $(document).ready(function () {
     // 뒷면 내용
     const backContent = $("<div>").addClass("p-4 flex-grow");
     const stepsList = $("<ol>").addClass(
-      "list-decimal pl-5 space-y-2 text-gray-800"
+      "list-decimal pl-5 space-y-2 text-white"
     );
 
     responseData.steps.forEach((step) => {
@@ -319,10 +250,12 @@ $(document).ready(function () {
 
   // API 호출 함수
   function fetchDisasterAlerts() {
+    const today = moment().format("YYYYMMDD");
+
     const apiUrl =
       "https://api.allorigins.win/get?url=" +
       encodeURIComponent(
-        "https://www.safetydata.go.kr/V2/api/DSSP-IF-00247?&serviceKey=R9VXP72Z0Y6YV23M&numOfRows=10&pageNo=1&returnType=json&crtDt=20250408"
+        `https://www.safetydata.go.kr/V2/api/DSSP-IF-00247?&serviceKey=R9VXP72Z0Y6YV23M&numOfRows=10&pageNo=1&returnType=json&crtDt=${today}`
       );
 
     $.ajax({
@@ -330,10 +263,7 @@ $(document).ready(function () {
       type: "GET",
       dataType: "json",
       success: function (response) {
-        console.log(response);
-        const data = JSON.parse(response.contents); // JSON 변환
-        console.log(data); // 전체 데이터 출력
-        console.log(data.body); // body 출력
+        const data = JSON.parse(response.contents);
 
         if (data && data.body && data.body) {
           displayDisasterAlerts(data.body);
